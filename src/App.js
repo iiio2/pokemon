@@ -20,6 +20,7 @@ function App() {
         cancelToken: new axios.CancelToken((c) => (cancel = c)),
       })
       .then((res) => {
+        console.log(res.data.results);
         setLoading(false);
         setNextPageUrl(res.data.next);
         setPrevPageUrl(res.data.previous);
@@ -41,7 +42,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h3>Pokemon App</h3>
+      <h4 className='text-center'>Pokemon App</h4>
       <PokemonList pokemon={pokemon} />
       <Pagination
         goToPrevPage={prevPageUrl ? goToPrevPage : null}

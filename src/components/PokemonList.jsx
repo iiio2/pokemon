@@ -3,11 +3,15 @@ import { Fragment } from 'react';
 const PokemonList = ({ pokemon }) => {
   return (
     <Fragment>
-      <ul>
+      <div className='row'>
         {pokemon.map((poke) => (
-          <li key={poke.name}>{poke.name}</li>
+          <div key={poke.name} className='col-sm-3'>
+            <div className='card'>
+              <h5 className='text-center'>{poke.name}</h5>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </Fragment>
   );
 };
